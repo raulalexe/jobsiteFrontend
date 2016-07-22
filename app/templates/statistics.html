@@ -1,0 +1,36 @@
+<section data-ng-controller="ChartCtrl as vm">
+    <div class="container">
+	    <header class="section-header">
+	      <div class="col-sm-12 col-xs-12">
+	        <h2 id="results">{{ 'STATISTICS' | translate }}</h2>
+	      </div>
+	    </header>
+		
+		<div>
+	    	<h3>{{ 'JOBS_BY_COUNTRY' | translate }}</h3>
+	    </div>
+		<div>
+		  <canvas id="bar" class="chart chart-bar"
+		    chart-data="vm.dataCountry" chart-labels="vm.labelsCountry" chart-series="vm.seriesCountry">
+		  </canvas>
+		</div>
+
+		<div>
+	    	<h3>{{ 'JOBS_BY_LANGUAGE' | translate }}</h3>
+	    </div>
+		<div>
+		  <canvas id="barLang" class="chart chart-bar"
+		    chart-data="vm.dataLanguage" chart-labels="vm.labelsLanguage" chart-series="vm.seriesLanguage">
+		  </canvas>
+		</div>
+
+		<div>
+	    	<h3>{{ 'JOBS_COUNTRY_LAST_MONTHS' | translate }}</h3>
+	    </div>
+		<div>
+		  <canvas id="barCountryLastMonths" class="chart chart-bar"
+		    chart-data="vm.dataCountryByMonth" chart-labels="vm.labelsCountryByMonth" chart-series="vm.seriesCountryByMonth">
+		  </canvas>
+		</div>
+	</div>
+</section>

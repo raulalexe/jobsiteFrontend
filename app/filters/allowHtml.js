@@ -1,0 +1,1 @@
+app.filter('allowHtml', function($sce) { return $sce.trustAsHtml; });

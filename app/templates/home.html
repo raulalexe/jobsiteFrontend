@@ -1,0 +1,38 @@
+<section>
+  <div class="container">
+    <header class="section-header">
+      <div class="col-sm-12 col-xs-12 latest">{{ 'LATEST' | translate }}</div>
+      <div class="col-sm-12 col-xs-12">
+        <h2>{{ 'RECENT_JOBS' | translate }}</h2>
+      </div>
+    </header>
+
+    <div class="job-items">
+      <div class="col-sm-12 col-xs-12 job-item" data-ng-repeat="job in vm.jobs">
+          <a class="" href="#job/{{job._id}}">
+            <div class="job-data">
+              <div class="job-data-left col-sm-9 col-xs-12">
+                <div class="logo" data-ng-show="job.logoUri">
+                  <img data-ng-src="{{job.logoUri}}" alt="Logo"/>
+                </div>
+                <div class="hgroup">
+                  <h4 class="capitalize">{{job.title}}</h4>
+                  <h5>{{job.company}}</h5>
+                </div>
+              </div>
+              <div class="meta pull-right col-sm-3 col-xs-12">
+                <div class="location capitalize" data-ng-show="job.location">
+                  <i class="fa fa-map-marker"></i> 
+                  {{ job.location | locationFilter }}
+                </div>
+                <div class="label label-success">{{ job.type }}</div>
+              </div>
+            </div>
+          </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xs-12 all-jobs">
+      <a class="btn btn-primary" href="#/jobs">{{ 'MORE_JOBS' | translate }}<a>
+    </div>
+  </div>
+</section>

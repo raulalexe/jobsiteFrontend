@@ -1,0 +1,32 @@
+app.factory('jobService', ['$http', function($http){
+	var jobServiceFactory = {};
+
+	var _getJob = function(id){
+		var queryUrl = serviceUrl + "/job" + id;
+		return $htpp.get(queryUrl).then( function(resp) {
+			return resp.data;
+		});
+	};
+
+	var _getJobs = function(){
+		var query = baseUrl + "/jobs/?";
+            //set parameters in case they were not sent
+            keywords = (typeof keywords === "undefined") ? "" : keywords;
+            skip = (typeof skip === "undefined") ? "0" : skip;
+            toget = (typeof toget === "undefined") ? "15" : toget;
+            categories = (typeof skip === "undefined") ? "" : categories;
+            sortBy = (typeof sortBy === "undefined") ? "" : sortBy;
+            
+            query = query + "keywords=" + keywords + "&location="+ location + "&category=" + categories + "&sortBy=" + sortBy 
+            	+"&skip="+skip+"&get="+toget;
+            return $http.get(query).then( function(resp){
+            	return resp.data;
+            });
+            
+	}
+
+	jobServiceFactory.getJob = _getJob;
+	jobServiceFactory.getJobs = _getJobs;
+
+	return jobServiceFactory;
+}]);
