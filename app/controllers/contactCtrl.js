@@ -1,3 +1,3 @@
-app.controller('ContactCtrl', ['', function(){
-	
+app.controller('ContactCtrl', [function() {
+
 }]);

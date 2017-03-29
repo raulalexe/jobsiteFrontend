@@ -1,0 +1,23 @@
+<section class="unsubscribe">
+    <div class="container">
+        <div class="col-sm-12 col-xs-12">
+            <h2>{{ 'UNSUBSCRIBE' | translate }}</h2>
+            <p class="text-justify">
+                {{ 'P1_UNSUBSCRIBE' | translate }}
+            </p>
+
+            <p class="text-justify">
+                {{ 'P2_UNSUBSCRIBE' | translate }}
+            </p>
+
+            <div class="unsubscribe-btn">
+                <form data-ng-submit="vm.unsubscribe()">
+                    <button class="btn btn-primary" type="submit">{{ 'UNSUBSCRIBE_BTN_TEXT' | translate }}</button>
+                    <a href="#!/home" class="btn btn-default">{{ 'STAY_SUBSCRIBED_BTN_TEXT' | translate }}</a>
+                </form>
+            </div>
+
+            <p ng-class="{'text-danger': vm.showErr, 'text-success' : vm.showMsg }">{{vm.msg}}</p>
+        </div>
+    </div>
+</section>

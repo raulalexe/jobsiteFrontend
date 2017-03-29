@@ -1,52 +1,48 @@
 <section>
-  <div class="container">
-    <header class="section-header">
-      <div class="col-sm-12 col-xs-12">
-        <h2 id="title" class="capitalize">{{vm.job.title}}</h2>
-      </div>
-    </header>
-      <div class="job-detail-data row">
-        <div class="job-data-left col-sm-8 col-xs-12">
-          <div class="logo" data-ng-show="vm.job.logoUri">
-            <img data-ng-src="{{vm.job.logoUri}}" alt="Logo"/>
-          </div>
-          <div class="hgroup">
-            <h4 data-ng-show="vm.job.company">{{ 'COMPANY_LBL' | translate }}</h4>
-            <h5>{{vm.job.company}}</h5>
-          </div>
-        </div>
-        <div class="meta col-sm-4 col-xs-12">
-          <div class="location capitalize" data-ng-show="vm.job.location">
-            <a href="#/jobs?location={{vm.job.location}}" class="source-link">
-              <i class="fa fa-map-marker"></i>
-              {{vm.job.location | arrayToString}}
-            </a>
-          </div>
-            
-          <div class="salary" data-ng-show="vm.job.salary">
-            <i class="fa fa-money"></i>
-            {{vm.job.salary}}
-          </div>   
-          <div class="post-date" data-ng-show="vm.job.postDate">
-            <i class="fa fa-calendar"></i>
-             {{ vm.job.postDate | date : 'dd.MM.yyyy' }}
-          </div>
-          <div class="post-date" data-ng-show="vm.job.source">
-            <a href="{{vm.job.url}}" class="source-link">
-              <i class="fa fa-external-link-square"></i>
-              {{ vm.job.source }}
-            </a>
-          </div>
-          <div class="label label-success">{{ vm.job.type }}</div>
-        </div>
-  
-        <div class="col-sm-12 col-xs-12 job-description" ng-bind-html="vm.job.description | allowHtml">
-        </div>
-      </div>
+    <div class="container">
+        <header class="section-header">
+            <div class="col-sm-12 col-xs-12">
+                <h2 id="title" class="capitalize">{{vm.job.title}}</h2>
+            </div>
+        </header>
+        <div class="job-detail-data row">
+            <div class="job-data-left col-sm-8 col-xs-12">
+                <div class="logo" data-ng-show="vm.job.logoUri">
+                    <img data-ng-src="{{vm.job.logoUri}}" alt="Logo" />
+                </div>
+                <div class="hgroup">
+                    <h4 data-ng-show="vm.job.company">{{ 'COMPANY_LBL' | translate }}</h4>
+                    <h5>{{vm.job.company}}</h5>
+                </div>
+            </div>
+            <div class="meta col-sm-4 col-xs-12">
+                <div class="location capitalize" data-ng-show="vm.job.location">
+                    <a href="#!/jobs?location={{vm.job.location}}" class="source-link">
+                        <i class="fa fa-map-marker"></i> {{vm.job.location | arrayToString}}
+                    </a>
+                </div>
 
-      <div class="col-sm-12 col-xs-12 apply">
-        <a class="btn btn-primary" href="{{ vm.job.url }}">{{ 'APPLY' | translate }} <a>
-        <a class="btn btn-default" href="#/jobs#results">{{ 'BACK_TO_SEARCH' | translate }}<a>
+                <div class="salary" data-ng-show="vm.job.salary">
+                    <i class="fa fa-money"></i> {{vm.job.salary}}
+                </div>
+                <div class="post-date" data-ng-show="vm.job.postDate">
+                    <i class="fa fa-calendar"></i> {{ vm.job.postDate | date : 'dd.MM.yyyy' }}
+                </div>
+                <div class="post-date" data-ng-show="vm.job.source">
+                    <a href="{{vm.job.url}}" class="source-link">
+                        <i class="fa fa-external-link-square"></i> {{ vm.job.source }}
+                    </a>
+                </div>
+                <div class="label label-success">{{ vm.job.type }}</div>
+            </div>
+
+            <div class="col-sm-12 col-xs-12 job-description" ng-bind-html="vm.job.description | allowHtml">
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-xs-12 apply">
+            <a class="btn btn-primary" href="{{ vm.job.url }}" target="_blank">{{ 'APPLY' | translate }} <a>
+        <a class="btn btn-default" href="#!/jobs#results">{{ 'BACK_TO_SEARCH' | translate }}<a>
       </div>  
     </div>
   </div>
